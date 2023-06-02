@@ -1,6 +1,9 @@
 # Lambda-Xray-Proj
 
 # Overview 
+Below are applications I will use for the project:
+![lambda-xray-arc](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/220257c1-db38-4b6a-a81e-bb441d63a7df)
+
 I will be creating a Lambda function that can be callved via Function URL, that will query a Dog photo API . It will then save the image to an S3 bucket and then show us the image in the browser. 
 Dog API: https://dog.ceo/dog-api/
 
@@ -14,8 +17,7 @@ You need to download the **function.zip** file in the repo. You can upload to La
 
 I will be creating this environment in the US East(N.Virginia) us-east-1 region. If you are deploying elsewhere make sure it is consistent with a region that works for you.
 Make sure you have an IAM account with proper privileges. It is recommended you login with an account that has admin privileges granted from the root account that you signed up with.
-Below are applications I will use for the project:
-![lambda-xray-arc](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/30708d6f-31da-4fd5-b031-7b31a1728fc6)
+
 
 
 # Instructions
