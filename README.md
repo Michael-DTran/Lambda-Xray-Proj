@@ -19,6 +19,8 @@ Make sure you have an IAM account with proper privileges. It is recommended you 
 Head to the S3 console: https://s3.console.aws.amazon.com/s3/buckets
 ![Screenshot (647)](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/a8f31cc1-930e-4e52-b22a-7cfeb05e1b51)
 
+
+
 [^1]: https://www.youtube.com/watch?v=V1Fj8uEyp-E&t=54s
 
 
