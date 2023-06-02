@@ -15,7 +15,8 @@ You need to download the **function.zip** file in the repo. You can upload to La
 I will be creating this environment in the US East(N.Virginia) us-east-1 region. If you are deploying elsewhere make sure it is consistent with a region that works for you.
 Make sure you have an IAM account with proper privileges. It is recommended you login with an account that has admin privileges granted from the root account that you signed up with.
 Below are applications I will use for the project:
-![lambda-xray-arc](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/ee6f13a1-6db3-4d2e-b747-f32451059650)
+![lambda-xray-arc](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/30708d6f-31da-4fd5-b031-7b31a1728fc6)
+
 
 # Instructions
 # Stage 1  - Create dog photo bucket
