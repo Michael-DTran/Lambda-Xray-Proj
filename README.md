@@ -8,7 +8,7 @@ I will then set up Lambda X-Ray to view in the code if there are any bottle neck
 You need to download the function.zip file in the repo to upload it to Lambda. 
 The Lambda function is in courtesey of Adam Cantrill's Course: Mini Project - Using Lambda and AWS X-Ray to debug ( serverless ) applications [^1]
 
-You need to download the '''function.zip''' file in the
+You need to download the **function.zip** file in the repo. You can upload to Lambda as is. 
 
 
 [^1]: https://www.youtube.com/watch?v=V1Fj8uEyp-E&t=54s
