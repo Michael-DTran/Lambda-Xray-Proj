@@ -180,20 +180,20 @@ Investigating further on the *Exceptions* tab you will see how the bucket does n
 # Stage 6 - Cleaning up 
 
 To tidy up the account to its orignal state head to S3: https://s3.console.aws.amazon.com/s3
-Head to the bucket and empty it. Follow the prompts and click *empty*
+Head to the bucket and empty it. Follow the prompts and click *empty*.
 
 ![Stage6 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/be4d3f06-8703-464d-ab92-3e30fcb6fce2)
 
 ![Stage6 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/1bfdf3a7-6884-48fc-8e35-0871111f6f37)
 
-After it is emptied, delete the bucket. Follow the prompts to *delete bucket*
+After it is emptied, delete the bucket. Follow the prompts to *delete bucket*.
 
 ![Stage6 3](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/fdf42114-e2a1-4057-b1cc-5749c4d3299b)
 
 ![Stage6 4](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/5f9d271f-31ca-4042-90c9-36f9eff3b5aa)
 
 Next, head to Lambda: https://us-east-1.console.aws.amazon.com/lambda
-Delete the function. Follow the prompts and then *delete*
+Delete the function. Follow the prompts and then *delete*.
 
 ![Stage6 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/da9fa9a1-e73c-408b-8d03-f3264978420e)
 
@@ -209,8 +209,8 @@ Under the search bar enter in **dog-photo-function-role** Click on the role and 
 ![Stage6 10](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/1a2c2647-2720-4045-a4cc-0cc3c6f15051)
 
 Finally, head to Cloudwatch: https://us-east-1.console.aws.amazon.com/cloudwatch
-Go to *Log groups* and under the *Actions* tab go to *Delete log group(s)*
-Press **Delete**
+Go to *Log groups* and under the *Actions* tab go to *Delete log group(s)*.
+Press **Delete**.
 
 ![Stage6 11](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/177b4fee-325b-4c8b-abc5-1d09754cfb64)
 
