@@ -22,7 +22,7 @@ Make sure you have an IAM account with proper account privileges.
 
 # Instructions
 # Stage 1  - Create dog photo bucket
-Head to the S3 console: https://s3.console.aws.amazon.com/s3/buckets
+Head to the console: https://s3.console.aws.amazon.com/s3/buckets
 ![Stage1-S3-Bucket](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/a8f31cc1-930e-4e52-b22a-7cfeb05e1b51)
 
 We will call the bucket **cute-doge** (bucket names must be globally unique so use a name that is not taken) and create the bucket)
@@ -159,7 +159,7 @@ Head to *environmental variables* and click *edit*
 
 ![Stage5 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/59d731c1-11ce-4fd3-8c67-0ab5c03349d8)
 
-Change the *value* to something other than the configured s3 bucket. Click **Save**
+Change the *value* to something other than the configured S3 bucket. Click **Save**
 
 ![Stage5 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/74c547d9-0544-44bb-b8d3-ef2fedcd6a9c)
 
