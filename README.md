@@ -27,6 +27,7 @@ Head to the S3 console: https://s3.console.aws.amazon.com/s3/buckets
 
 I will call the bucket **cute-doge** (bucket names must be globally unique so use a name that is not taken) and create the bucket)
 The region will be the US East(N.Virginia) us-east-1 region. All the other settings can be left as is. 
+
 ![Stage1 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7cb520ab-892f-4c27-b2a7-0116a613c7ff)
 
 # Stage 2 - Creating the Lambda IAM role
