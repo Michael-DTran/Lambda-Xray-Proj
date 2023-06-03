@@ -76,7 +76,8 @@ Upload the whole zip file and save it.
 
 ![Stage3 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7effc7b2-acb0-409f-a56e-25bfa406de8a)
 
-> import aws_xray_sdk.core
+>
+import aws_xray_sdk.core
 import boto3
 import requests
 import os
@@ -84,7 +85,7 @@ import base64
 import io
 import mimetypes
 
-# Initialize the AWS X-Ray SDK
+#Initialize the AWS X-Ray SDK
 aws_xray_sdk.core.patch_all()
 
 def lambda_handler(event, context):
