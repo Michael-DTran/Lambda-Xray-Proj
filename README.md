@@ -76,7 +76,7 @@ Upload the whole zip file and save it.
 
 ![Stage3 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7effc7b2-acb0-409f-a56e-25bfa406de8a)
 
-*Note*: The lambda function is attached to the source file. A zip file is used to package the x-ray sdk due to the file being too large for modifications in Lambda. Files must then be packaged in a zip file to be uploaded. If you need to further modify the code it must be then unzipped, making the changes, and then zipping it back up to upload to Lambda again. Modifications to the function at whole do not need to be modified. https://docs.aws.amazon.com/lambda/latest/dg/python-package.html
+*Note*: The lambda function is attached to the source file. A zip file is used to package the x-ray sdk due to the file being too large for modifications in Lambda. Files must then be packaged in a zip file to be uploaded. If you need to further modify the code it must be then unzipped, changes made, and then zipped back up to upload to Lambda again. Modifications to the function at whole do not need to be modified. https://docs.aws.amazon.com/lambda/latest/dg/python-package.html
 ![Stage3 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/d882ae56-8cc7-4099-b19f-da613ffa4c90)
 
 
@@ -86,7 +86,8 @@ Go to the *Configuration* tab, then *Function URL* then click **Create function 
 
 On the Function URL page select *Auth type* to **NONE**. Select **Save** after.
 This leaves our Lambda function open to the public to be called without a limit. It is recommended to set up an IAM role to only allow certain user(s) to use this function URL. 
-For the purpose and scope of this demo we don't need to cover this aspect but it is something to keep in mind when creating more security in the cloud.
+For the purpose and scope of this demo we don't need to cover this aspect but it is something to keep in mind when creating more security in your cloud environment.
+
 ![Stage3 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/f7429dab-5ca0-4b3f-866c-4d4fb31e98e4)
 
 Copy the Function URL onto your clipboard. We will need that soon.
@@ -101,6 +102,9 @@ Under *Monitoring and operations tools* click on **Edit**
 ![Stage3 12](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/61f73d22-d807-4065-9dba-eda24df1e47a)
 
 Toggle on the *active tracing* under **AWS X-Ray**
+
+![Stage3 13](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/63e23a0a-18be-42ba-90cd-74f00dc3580a)
+
 Under General Configuration click on *edit* change the timeout timer to *0 min and 15 sec* to prevent the Lambda  function from timing out.
 Click **Save**
 ![Stage3 15](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/288737b9-b656-4604-a104-fbef05ff5812)
