@@ -10,7 +10,7 @@ Dog API: https://dog.ceo/dog-api/
 We will then set up Lambda X-Ray to view in the code if there are any bottle necks or errors.
 IAM will be used to gain permissions to authorize the lambda function.
 You need to download the function.zip file in the repo to upload it to Lambda. 
-The Lambda function is courtesy of Adam Cantrill's Course: Mini Project - Using Lambda and AWS X-Ray to debug ( serverless ) applications [^1]
+The Lambda function and project idea is courtesy of *Adam Cantrill's Course: Mini Project - Using Lambda and AWS X-Ray to debug ( serverless ) applications* [^1]
 
 You need to download the **function.zip** file in the repo. You can upload to Lambda as is. 
 **lambda-function** is the main component of what the lambda function will be reading within the **function.zip** file.
