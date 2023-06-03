@@ -193,7 +193,7 @@ After it is emptied, delete the bucket. Follow the prompts to *delete bucket*.
 ![Stage6 4](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/5f9d271f-31ca-4042-90c9-36f9eff3b5aa)
 
 Next, head to Lambda: https://us-east-1.console.aws.amazon.com/lambda
-Delete the function. Follow the prompts and then *delete*.
+Head to the actions tab to delete the function. Follow the prompts and then *delete*.
 
 ![Stage6 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/da9fa9a1-e73c-408b-8d03-f3264978420e)
 
