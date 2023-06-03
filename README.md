@@ -107,9 +107,113 @@ Toggle on the *active tracing* under **AWS X-Ray**
 
 Under General Configuration click on *edit* change the timeout timer to *0 min and 15 sec* to prevent the Lambda  function from timing out.
 Click **Save**
+
 ![Stage3 15](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/288737b9-b656-4604-a104-fbef05ff5812)
 
  
 [^1]: https://www.youtube.com/watch?v=V1Fj8uEyp-E&t=54s
+
+# Stage 4 - Testing the Function
+
+If you saved the function URL from the previous stage, copy and paste the function in a different tab to open it.
+You can alternatively head to the Lambda console: https://us-east-1.console.aws.amazon.com/lambda
+Under **functions** click on the function name *dog-image-scraper* and click on the *Function URL* from there.
+
+You should see a photo of a dog via this function URL
+
+![Stage4 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/ef6926fe-c6a2-4e42-a979-c8eb080cf64a)
+
+Head to S3 and click on the S3 bucket you made. The jpg file should be uploaded to the S3 bucket. If there is more than one image try to find the corresponding image with the Function URL you just opened.
+
+![Stage4 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/98c1f76d-3131-466e-a78f-1f821b5859a8)
+
+Click on the jpg file and open it
+
+![Stage4 3](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/f0470693-7286-4838-ad47-78b5cfd4113a)
+
+You should notice that the file attached to the S3 bucket is the same image but the image is under a security token that authorizes you to view the file.
+As you refresh the Function URL you will call the API to generate a random photo of another dog into the S3 bucket.
+
+![Stage4 4](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/74bbd9ed-9fa0-4842-a4a4-40e7ebb76ec1)
+
+# Stage 5 - View X-Ray Metrics
+Go to the CloudWatch console: https://us-east-1.console.aws.amazon.com/cloudwatch
+
+Head to service map to see the map of our application stack
+
+![Stage5 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/c25ada01-39f0-4da6-a382-c09d504d4bad)
+
+You can find in-depth metrics of each application and its function calls. 
+
+![Stage5 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/9a5eebdd-ea7f-4d78-99ad-1707c9540523)
+
+You can specify deeper into the calls that are made
+![Stage5 3](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/e8e83d69-0e8f-4fa0-bb2e-9486b107fb33)
+
+![Stage5 4](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/15ba20e3-0a11-4c10-810f-9b340ed7315c)
+
+The next segment is to break the function and to monitor how X-ray picks up on it.
+Go to Lambda: https://us-east-1.console.aws.amazon.com/lambda
+and head to *environmental variables* and click *edit*
+
+![Stage5 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/59d731c1-11ce-4fd3-8c67-0ab5c03349d8)
+
+Change the *value* to something other than the configured s3 bucket. Click **Save**
+
+![Stage5 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/74c547d9-0544-44bb-b8d3-ef2fedcd6a9c)
+
+If you refresh the Function URL under the Lambda function you should receive an error
+
+![Stage5 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/549bee78-c920-4f00-94e0-2240a7449ebe)
+
+If you head back to X-ray under the *traces* tab you will see the calls having errors. It will also point out the s3 bucket name change taking place.
+
+![Stage5 9](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/0fd48b2b-6560-433d-97de-0d850ebc06d2)
+
+![Stage5 10](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/d7a78022-8eba-465b-9562-9cdb15abc917)
+
+![Stage5 11](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/b212e825-ec11-4698-967e-0c5f7b76807c)
+
+Investigating further on the *Exceptions* tab you will see how the bucket does not exist anymore with the one it was configured to. 
+
+**Stage 6 - Cleaning up **
+
+To tidy up the account to its orignal state head to S3: https://s3.console.aws.amazon.com/s3
+Head to the bucket and empty it. Follow the prompts and click *empty*
+
+![Stage6 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/be4d3f06-8703-464d-ab92-3e30fcb6fce2)
+
+![Stage6 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/1bfdf3a7-6884-48fc-8e35-0871111f6f37)
+
+After it is emptied, delete the bucket. Follow the prompts to *delete bucket*
+
+![Stage6 3](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/fdf42114-e2a1-4057-b1cc-5749c4d3299b)
+
+![Stage6 4](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/5f9d271f-31ca-4042-90c9-36f9eff3b5aa)
+
+Next, head to Lambda: https://us-east-1.console.aws.amazon.com/lambda
+Delete the function. Follow the prompts and then *delete*
+
+![Stage6 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/da9fa9a1-e73c-408b-8d03-f3264978420e)
+
+![Stage6 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/98519e77-9a8c-46b2-862e-73ca5ceb68be)
+
+Next, head to IAM: https://us-east-1.console.aws.amazon.com/iamv2
+Under the search bar enter in **dog-photo-function-role** Click on the role and press the *delete* button. Follow the prompts to delete.
+
+![Stage6 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/b4c196f6-d6d3-4d87-8d48-50bff55d1fac)
+
+![Stage6 9](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/877bcbec-4fd2-4495-8b18-06185e2d2548)
+
+![Stage6 10](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/1a2c2647-2720-4045-a4cc-0cc3c6f15051)
+
+Finally, head to Cloudwatch: https://us-east-1.console.aws.amazon.com/cloudwatch
+Go to *Log groups* and under the *Actions* tab go to *Delete log group(s)*
+Press **Delete**
+
+![Stage6 11](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/177b4fee-325b-4c8b-abc5-1d09754cfb64)
+
+![Stage6 12](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/8ab06a77-3601-448d-9114-3a8e1b2fd5e3)
+
 
 
