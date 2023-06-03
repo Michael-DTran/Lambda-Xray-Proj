@@ -167,7 +167,7 @@ If you refresh the Function URL under the Lambda function you should receive an 
 
 ![Stage5 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/549bee78-c920-4f00-94e0-2240a7449ebe)
 
-If you head back to X-ray under the *traces* tab you will see the calls having errors. It will also point out the S3 bucket name change taking place.
+If you head back to X-ray under the *traces* tab you will see the calls having errors. It will also point out the S3 bucket name change taking place. The icons in the traces map will be brown in color if they had errors in their path.
 
 ![Stage5 9](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/0fd48b2b-6560-433d-97de-0d850ebc06d2)
 
@@ -177,7 +177,7 @@ If you head back to X-ray under the *traces* tab you will see the calls having e
 
 Investigating further on the *Exceptions* tab you will see how the bucket does not exist anymore with the one it was configured to. 
 
-**Stage 6 - Cleaning up **
+# Stage 6 - Cleaning up 
 
 To tidy up the account to its orignal state head to S3: https://s3.console.aws.amazon.com/s3
 Head to the bucket and empty it. Follow the prompts and click *empty*
