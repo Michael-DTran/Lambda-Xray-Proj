@@ -77,6 +77,7 @@ Upload the whole zip file and save it.
 ![Stage3 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7effc7b2-acb0-409f-a56e-25bfa406de8a)
 
 >
+
 import aws_xray_sdk.core
 import boto3
 import requests
@@ -129,7 +130,7 @@ def lambda_handler(event, context):
         'isBase64Encoded': True
     }
     return response
-    >
+ 
 
 
 
