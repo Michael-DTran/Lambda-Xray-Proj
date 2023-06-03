@@ -155,7 +155,7 @@ You can specify deeper into the calls that are made
 The next segment is to break the function and to monitor how X-ray picks up on it.
 Go to Lambda: https://us-east-1.console.aws.amazon.com/lambda
 
-and head to *environmental variables* and click *edit*
+Head to *environmental variables* and click *edit*
 
 ![Stage5 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/59d731c1-11ce-4fd3-8c67-0ab5c03349d8)
 
