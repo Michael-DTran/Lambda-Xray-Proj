@@ -84,7 +84,7 @@ import base64
 import io
 import mimetypes
 
-#Initialize the AWS X-Ray SDK
+# Initialize the AWS X-Ray SDK
 aws_xray_sdk.core.patch_all()
 
 def lambda_handler(event, context):
