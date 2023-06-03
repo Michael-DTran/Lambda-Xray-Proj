@@ -167,7 +167,7 @@ If you refresh the Function URL under the Lambda function you should receive an 
 
 ![Stage5 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/549bee78-c920-4f00-94e0-2240a7449ebe)
 
-If you head back to X-ray under the *traces* tab you will see the calls having errors. It will also point out the s3 bucket name change taking place.
+If you head back to X-ray under the *traces* tab you will see the calls having errors. It will also point out the S3 bucket name change taking place.
 
 ![Stage5 9](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/0fd48b2b-6560-433d-97de-0d850ebc06d2)
 
