@@ -64,9 +64,18 @@ Name the function as **dog-image-scraper**. Set the runtime to **Python 3.9**. A
 
 ![Stage3 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7764794b-df5e-4d05-8bb5-59e43b88a51f)
 
-Under Execution role change it to **Use an existing role** and make sure it is set to **dog-photo-function-role** from the previous permissions policy we made. Click on **Create Function**
+Under Execution role change it to **Use an existing role** and make sure it is set to **dog-photo-function-role** from the previous permissions policy we made. Click on **Create Function**.
 
 ![Stage3 3](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/0be2faf3-8ea2-4e2a-8d0c-a9466c504d6a)
+
+Back on the function page. Click on the **Code** tab and upload the zip file
+
+![Stage3 4](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/5b777f04-f2ff-4033-8544-89452001a83f)
+
+Upload the whole zip file and save it.
+
+![Stage3 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7effc7b2-acb0-409f-a56e-25bfa406de8a)
+
 
 
 
