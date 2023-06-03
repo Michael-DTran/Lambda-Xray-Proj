@@ -32,7 +32,7 @@ The region will be the US East(N.Virginia) us-east-1 region. All the other setti
 
 # Stage 2 - Creating the Lambda IAM role
 
-Go to the IAM console: [https://s3.console.aws.amazon.com/s3/buckets](https://us-east-1.console.aws.amazon.com/iamv2/)
+Go to the IAM console: https://us-east-1.console.aws.amazon.com/iamv2/
 
 
 Click on **Roles**, then click **Create Role**
