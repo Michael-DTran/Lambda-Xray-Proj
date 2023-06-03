@@ -33,21 +33,27 @@ The region will be the US East(N.Virginia) us-east-1 region. All the other setti
 # Stage 2 - Creating the Lambda IAM role
 
 Go to the IAM console: https://us-east-1.console.aws.amazon.com/iamv2/
-
-
 Click on **Roles**, then click **Create Role**
 
-Set trusted entity type to "AWS Service" and select "Lambda"
+![Stage2 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/bbdd07eb-c491-4206-bddd-6a6a60e88c4f)
 
-Click **Next**
+Set trusted entity type to "AWS Service" and select **Lambda**. Click **Next**
+![Stage2 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/87c1eb66-d787-47d5-89fe-c9d9898d6b33)
+
 
 On the 'Add Permissions' page search for and select **Amazons3FullAccess**
-Press on **Clear filters** and then search for **CloudWatchFullAccess**
+Press on **Clear filters** 
 
-This can be further locked down to a specific bucket with specific actions
+![Stage2 3](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/368bbcd6-6b70-4b32-a849-f6d43cbe229e)
+
+and then search for **CloudWatchFullAccess**. Make sure there are 2 permissions polices selected
 Click **Next** 
-Set the Role name to **dog-photo-function-role**
+![Stage2 4](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/6f1b96aa-dec5-4b25-a01b-89cb4aa5dfc8)
+
+Set the Role name to **dog-photo-function-role**. Make sure that the two policy names that you added are included for this role.
 Click **Create role**
+
+![Stage2 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7ec7dbb2-44f1-4105-817d-bc740ba87f10)
 
 # Stage 3 - Create Lambda function
 Head to the Lambda console https://us-east-1.console.aws.amazon.com/lambda
