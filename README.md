@@ -76,63 +76,36 @@ Upload the whole zip file and save it.
 
 ![Stage3 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7effc7b2-acb0-409f-a56e-25bfa406de8a)
 
-import aws_xray_sdk.core
-import boto3
-import requests
-import os
-import base64
-import io
-import mimetypes
+*Note*: The lambda function is attached to the source file. A zip file is used to package the x-ray sdk due to the file being too large for modifications in Lambda. Files must then be packaged in a zip file to be uploaded. If you need to further modify the code it must be then unzipped, making the changes, and then zipping it back up to upload to Lambda again. Modifications to the function at whole do not need to be modified. https://docs.aws.amazon.com/lambda/latest/dg/python-package.html
+![Stage3 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/d882ae56-8cc7-4099-b19f-da613ffa4c90)
 
-# Initialize the AWS X-Ray SDK
-aws_xray_sdk.core.patch_all()
 
-def lambda_handler(event, context):
-    # Start a new X-Ray segment
-    with aws_xray_sdk.core.xray_recorder.capture('get_dog_images'):
-        # Create an S3 client
-        session = boto3.Session()
-        s3 = session.resource('s3')
-        bucket_name = os.getenv('BUCKET_NAME')
+Go to the *Configuration* tab, then *Function URL* then click **Create function URL**
 
-        # Call the Dog API
-        with aws_xray_sdk.core.xray_recorder.capture('call_dog_api'):
-            # Define the endpoint for the Dog API
-            endpoint = 'https://dog.ceo/api/breeds/image/random'
-            
-            # Make a GET request to the Dog API
-            response = requests.get(endpoint)
-            
-            # Get the image URL from the response
-            image_url = response.json()['message']
+![Stage3 7](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/896accec-be04-40b1-b09d-2f00692df109)
 
-            # Get the name of the image
-            image_name = str(response.json()['message']).split('/')[-1]
-            
-            # Download the image from the URL
-            image = requests.get(image_url, stream=True).content
-            
-        # Save the weather data to S3
-        with aws_xray_sdk.core.xray_recorder.capture('save_dog_to_s3'):
-            contenttype = mimetypes.types_map['.' + image_name.split('.')[-1]]
-            bucket = s3.Bucket(bucket_name)
-            bucket.upload_fileobj(io.BytesIO(image), image_name, ExtraArgs={'ContentType': contenttype})
-        
-    # Generate a response with the image in the body
-    response = {
-        'statusCode': 200,
-        'headers': {
-            'Content-Type': 'image/jpeg'
-        },
-        'body': base64.b64encode(image),
-        'isBase64Encoded': True
-    }
-    return response
+On the Function URL page select *Auth type* to **NONE**. Select **Save** after.
+This leaves our Lambda function open to the public to be called without a limit. It is recommended to set up an IAM role to only allow certain user(s) to use this function URL. 
+For the purpose and scope of this demo we don't need to cover this aspect but it is something to keep in mind when creating more security in the cloud.
+![Stage3 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/f7429dab-5ca0-4b3f-866c-4d4fb31e98e4)
+
+Copy the Function URL onto your clipboard. We will need that soon.
+![Stage3 9](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/fc385fe0-e82b-4bb9-9b41-bc83f9423868)
+
+Under the tab *Environmental Variables* click on *edit*
+Enter in *'BUCKET_NAME'* for **Key** and the bucket we created under **Value**
+
+![Stage3 11](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/ef830cca-01bd-4b4e-8044-cef8b82143f6)
+
+Under *Monitoring and operations tools* click on **Edit**
+![Stage3 12](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/61f73d22-d807-4065-9dba-eda24df1e47a)
+
+Toggle on the *active tracing* under **AWS X-Ray**
+Under General Configuration click on *edit* change the timeout timer to *0 min and 15 sec* to prevent the Lambda  function from timing out.
+Click **Save**
+![Stage3 15](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/288737b9-b656-4604-a104-fbef05ff5812)
+
  
-
-
-
-
 [^1]: https://www.youtube.com/watch?v=V1Fj8uEyp-E&t=54s
 
 
