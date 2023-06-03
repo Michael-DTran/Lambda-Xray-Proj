@@ -1,7 +1,7 @@
 # Lambda-Xray-Proj
 
 # Overview 
-Below are applications I will use for the project:
+Below are applications we will use for the project:
 ![lambda-xray-arc](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/220257c1-db38-4b6a-a81e-bb441d63a7df)
 
 We will be creating a Lambda function that can be callved via Function URL, that will query a Dog photo API . It will then save the image to an S3 bucket and then show us the image in the browser. 
