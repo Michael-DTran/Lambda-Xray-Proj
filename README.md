@@ -202,11 +202,11 @@ Head to the actions tab to delete the function. Follow the prompts and then *del
 Next, head to IAM: https://us-east-1.console.aws.amazon.com/iamv2
 Under the search bar enter in **dog-photo-function-role** Click on the role and press the *delete* button. Follow the prompts to delete.
 
-![Stage6 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/b4c196f6-d6d3-4d87-8d48-50bff55d1fac)
+![Stage6 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7d40807a-2dea-4735-8d59-b0a7112fe061)
 
 ![Stage6 9](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/877bcbec-4fd2-4495-8b18-06185e2d2548)
 
-![Stage6 10](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/1a2c2647-2720-4045-a4cc-0cc3c6f15051)
+![Stage6 10](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/4c272574-65bf-4f25-8946-2235f5075aa1)
 
 Finally, head to Cloudwatch: https://us-east-1.console.aws.amazon.com/cloudwatch
 Go to *Log groups* and under the *Actions* tab go to *Delete log group(s)*.
