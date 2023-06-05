@@ -133,6 +133,7 @@ def lambda_handler(event, context):
 ```
 
 *Note*: The lambda function is attached to the source file. A zip file is used to package the x-ray sdk due to the file being too large for modifications in Lambda. Files must then be packaged in a zip file to be uploaded. If you need to further modify the code it must be then unzipped, changes made, and then zipped back up to upload to Lambda again. Modifications to the function at whole do not need to be modified. https://docs.aws.amazon.com/lambda/latest/dg/python-package.html
+
 ![Stage3 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/d882ae56-8cc7-4099-b19f-da613ffa4c90)
 
 
