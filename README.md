@@ -1,5 +1,3 @@
-# Lambda-Xray-Proj
-
 # Overview 
 Below are applications we will use for the project:
 ![lambda-xray-arc](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/220257c1-db38-4b6a-a81e-bb441d63a7df)
