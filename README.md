@@ -39,7 +39,7 @@ Set trusted entity type to "AWS Service" and select **Lambda**. Click **Next**.
 ![Stage2 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/87c1eb66-d787-47d5-89fe-c9d9898d6b33)
 
 
-On the 'Add Permissions' page search for and select **Amazons3FullAccess**. Checkmark the policy.
+On the *Add Permissions* page search for and select **Amazons3FullAccess**. Checkmark the policy.
 
 Press on **Clear filters**.
 
