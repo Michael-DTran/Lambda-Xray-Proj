@@ -15,7 +15,7 @@ The Lambda function and project idea is courtesy of *Adam Cantrill's Course: Min
 You need to download the **function.zip** file in the repo. You can upload to Lambda as is. 
 **lambda-function** is the main component of what the lambda function will be reading within the **function.zip** file.
 
-We will be creating this environment in the US East(N.Virginia) us-east-1 region. If you are deploying elsewhere make sure it is consistent with a region that works for you.
+We will be creating this environment in the ```US East(N.Virginia) us-East-1``` region. If you are deploying elsewhere make sure it is consistent with a region that works for you.
 Make sure you have an IAM account with proper account privileges. 
 
 # Instructions
@@ -24,7 +24,7 @@ Head to the console: https://s3.console.aws.amazon.com/s3/buckets
 ![Stage1-S3-Bucket](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/a8f31cc1-930e-4e52-b22a-7cfeb05e1b51)
 
 We will call the bucket **cute-doge** (bucket names must be globally unique so use a name that is not taken) and create the bucket)
-The region will be the US East(N.Virginia) us-east-1 region. All the other settings can be left as is. 
+The region will be the ```US East(N.Virginia) us-east-1 region```. All the other settings can be left as is. 
 
 ![Stage1 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7cb520ab-892f-4c27-b2a7-0116a613c7ff)
 
@@ -35,11 +35,11 @@ Click on **Roles**, then click **Create Role**.
 
 ![Stage2 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/bbdd07eb-c491-4206-bddd-6a6a60e88c4f)
 
-Set trusted entity type to "AWS Service" and select **Lambda**. Click **Next**.
+Set trusted entity type to ```AWS Service``` and select **Lambda**. Click **Next**.
 ![Stage2 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/87c1eb66-d787-47d5-89fe-c9d9898d6b33)
 
 
-On the *Add Permissions* page search for and select **Amazons3FullAccess**. Checkmark the policy.
+On the ```Add Permissions``` page search for and select **Amazons3FullAccess**. Checkmark the policy.
 
 Press on **Clear filters**.
 
@@ -60,11 +60,11 @@ Head to the Lambda console https://us-east-1.console.aws.amazon.com/lambda
 Click **Create Function**.
 ![Stage3 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/6fc52dfa-e846-4917-9263-91ba2723ac94)
 
-Name the function as **dog-image-scraper**. Set the runtime to **Python 3.9**. Architecture can stay on **x86_64**.
+Name the function as ```dog-image-scraper```. Set the runtime to ```Python 3.9```. Architecture can stay on ```x86_64```.
 
 ![Stage3 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7764794b-df5e-4d05-8bb5-59e43b88a51f)
 
-Under Execution role change it to **Use an existing role** and make sure it is set to **dog-photo-function-role** from the previous permissions policy we made. Click on **Create Function**.
+Under Execution role change it to ```Use an existing role``` and make sure it is set to ```dog-photo-function-role``` from the previous permissions policy we made. Click on **Create Function**.
 
 ![Stage3 3](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/0be2faf3-8ea2-4e2a-8d0c-a9466c504d6a)
 
@@ -138,11 +138,11 @@ The lambda function is calling the API through the endpoint to generate a random
 
 ![Stage3 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/d882ae56-8cc7-4099-b19f-da613ffa4c90)
 
-Go to the *Configuration* tab, then *Function URL* then click **Create function URL**.
+Go to the ```Configuration``` tab, then ```Function URL```then click **Create function URL**.
 
 ![Stage3 7](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/896accec-be04-40b1-b09d-2f00692df109)
 
-On the Function URL page select *Auth type* to **NONE**. Select **Save** after.
+On the Function URL page select ```Auth type``` to ```NONE```. Select **Save** after.
 This leaves our Lambda function open to the public to be called without a limit. It is recommended to set up an IAM role to only allow certain user(s) to use this function URL. 
 
 For the purpose and scope of this demo we don't need to cover this aspect but it is something to keep in mind when creating more security in your cloud environment.
@@ -153,16 +153,16 @@ Copy the Function URL onto your clipboard. We will need that soon.
 
 ![Stage3 9](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/fc385fe0-e82b-4bb9-9b41-bc83f9423868)
 
-Under the tab *Environmental Variables* click on *edit*.
-Enter in *'BUCKET_NAME'* for **Key** and the bucket we created under **Value**.
+Under the tab ```Environmental Variables``` click on *edit*.
+Enter in 'BUCKET_NAME' for ```Key``` and the bucket we created under ```Value```.
 
 ![Stage3 11](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/ef830cca-01bd-4b4e-8044-cef8b82143f6)
 
-Under *Monitoring and operations tools* click on **Edit**.
+Under ```Monitoring and operations tools``` click on **Edit**.
 
 ![Stage3 12](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/61f73d22-d807-4065-9dba-eda24df1e47a)
 
-Toggle on the *active tracing* under **AWS X-Ray**.
+Toggle on the ```active tracing``` under ```AWS X-Ray```.
 
 ![Stage3 13](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/63e23a0a-18be-42ba-90cd-74f00dc3580a)
 
@@ -180,7 +180,7 @@ Click **Save**.
 If you saved the function URL from the previous stage, copy and paste the function in a different tab to open it.
 You can alternatively head to the Lambda console: https://us-east-1.console.aws.amazon.com/lambda
 
-Under **functions** click on the function name *dog-image-scraper* and click on the *Function URL* from there. You should see a photo of a dog via this function URL
+Under ```functions``` click on the function name ```dog-image-scraper``` and click on the **Function URL** from there. You should see a photo of a dog via this function URL
 
 ![Stage4 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/ef6926fe-c6a2-4e42-a979-c8eb080cf64a)
 
@@ -217,11 +217,11 @@ You can specify deeper into the calls that are made.
 The next segment is to break the function and to monitor how X-ray picks up on it.
 Go to Lambda: https://us-east-1.console.aws.amazon.com/lambda
 
-Head to *environmental variables* and click *edit*.
+Head to ```environmental variables``` and click **edit**.
 
 ![Stage5 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/59d731c1-11ce-4fd3-8c67-0ab5c03349d8)
 
-Change the *value* to something other than the configured S3 bucket. Click **Save**.
+Change the ```value``` to something other than the configured S3 bucket. Click **Save**.
 
 ![Stage5 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/74c547d9-0544-44bb-b8d3-ef2fedcd6a9c)
 
@@ -237,18 +237,18 @@ If you head back to X-ray under the *traces* tab you will see the calls having e
 
 ![Stage5 11](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/b212e825-ec11-4698-967e-0c5f7b76807c)
 
-Investigating further on the *Exceptions* tab you will see how the bucket does not exist anymore with the one it was configured to. 
+Investigating further on the ```Exceptions``` tab you will see how the bucket does not exist anymore with the one it was configured to. 
 
 # Stage 6 - Cleaning up 
 
 To tidy up the account to its orignal state head to S3: https://s3.console.aws.amazon.com/s3
-Head to the bucket and empty it. Follow the prompts and click *empty*.
+Head to the bucket and empty it. Follow the prompts and click **empty**.
 
 ![Stage6 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/be4d3f06-8703-464d-ab92-3e30fcb6fce2)
 
 ![Stage6 2](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/1bfdf3a7-6884-48fc-8e35-0871111f6f37)
 
-After it is emptied, delete the bucket. Follow the prompts to *delete bucket*.
+After it is emptied, delete the bucket. Follow the prompts to **delete bucket**.
 
 ![Stage6 3](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/fdf42114-e2a1-4057-b1cc-5749c4d3299b)
 
@@ -262,7 +262,7 @@ Head to the actions tab to delete the function. Follow the prompts and then *del
 ![Stage6 6](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/98519e77-9a8c-46b2-862e-73ca5ceb68be)
 
 Next, head to IAM: https://us-east-1.console.aws.amazon.com/iamv2
-Under the search bar enter in **dog-photo-function-role** Click on the role and press the *delete* button. Follow the prompts to delete.
+Under the search bar enter in ```dog-photo-function-role``` Click on the role and press the **delete** button. Follow the prompts to delete.
 
 ![Stage6 8](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7d40807a-2dea-4735-8d59-b0a7112fe061)
 
@@ -271,7 +271,7 @@ Under the search bar enter in **dog-photo-function-role** Click on the role and 
 ![Stage6 10](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/4c272574-65bf-4f25-8946-2235f5075aa1)
 
 Finally, head to Cloudwatch: https://us-east-1.console.aws.amazon.com/cloudwatch
-Go to *Log groups* and under the *Actions* tab go to *Delete log group(s)*.
+Go to ```Log groups``` and under the ```Actions``` tab go to ```Delete log group(s)```.
 Press **Delete**.
 
 ![Stage6 11](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/177b4fee-325b-4c8b-abc5-1d09754cfb64)
