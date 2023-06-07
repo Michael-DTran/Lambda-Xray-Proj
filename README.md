@@ -51,6 +51,7 @@ Click **Next**.
 ![Stage2 4](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/6f1b96aa-dec5-4b25-a01b-89cb4aa5dfc8)
 
 Set the Role name to **dog-photo-function-role**. Make sure that the two policy names that you added are included for this role.
+
 Click **Create role**.
 
 ![Stage2 5](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/7ec7dbb2-44f1-4105-817d-bc740ba87f10)
