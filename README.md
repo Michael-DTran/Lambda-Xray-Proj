@@ -31,6 +31,7 @@ The region will be the ```US East(N.Virginia) us-east-1 region```. All the other
 # Stage 2 - Creating the Lambda IAM role
 
 Go to the IAM console: https://us-east-1.console.aws.amazon.com/iamv2/
+
 Click on **Roles**, then click **Create Role**.
 
 ![Stage2 1](https://github.com/Michael-DTran/Lambda-Xray-Proj/assets/112426094/bbdd07eb-c491-4206-bddd-6a6a60e88c4f)
